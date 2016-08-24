@@ -1,3 +1,9 @@
+#my ignore
+config.txt
+runbot.bat
+log/log
+log/log*
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -87,3 +93,6 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+
+
