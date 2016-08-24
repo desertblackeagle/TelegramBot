@@ -32,7 +32,7 @@ targetlocation = LOCATIONINIT
 pokemonNumbers = 0
 bot = telepot.Bot(TOKEN)
 http = urllib3.PoolManager()
-r = None
+r = http.request('GET', "http://googl.com")
 
 def loadConfig():
 	log.info("load config start")
@@ -119,7 +119,7 @@ while 1:
 	except :
 		print ("GET request error")
 		print "Unexpected error:", sys.exc_info()[0]
-		log.info("Unexpected error:" + sys.exc_info()[0])
+		log.info("Unexpected error:" + str(sys.exc_info()[0]))
 	
 	print "Response Status : "+str(r.status)
 	if int(r.status) != 200:
@@ -148,5 +148,5 @@ while 1:
 	except:
 		bot.sendMessage(MAINUSERCHATID, u"炸掉了")
 		print "Unexpected error:", sys.exc_info()[0]
-		log.info("Unexpected error:" + sys.exc_info()[0])
+		log.info("Unexpected error:" + str(sys.exc_info()[0]))
 	r.close()
