@@ -1,5 +1,5 @@
 # TelegramBot
-Notify "Somethin" to you
+Notify "Something" to you
 
 python telegrambot.py "Telegram_API_Key" "MainUserID" "SiteURL" "SiteHost"
 

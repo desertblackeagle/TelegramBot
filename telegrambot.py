@@ -32,7 +32,7 @@ targetlocation = LOCATIONINIT
 pokemonNumbers = 0
 bot = telepot.Bot(TOKEN)
 http = urllib3.PoolManager()
-r = http.request('GET', "http://googl.com")
+r = http.request('GET', "https://github.com/")
 
 def loadConfig():
 	log.info("load config start")
