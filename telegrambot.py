@@ -54,21 +54,6 @@ def loadConfig():
     log.info("users : " + str(users))
     log.info("load config end")
 
-def locationChange(msg):
-    print msg['location']['latitude']
-    print msg['location']['longitude']
-    v2 =  float(msg['location']['latitude']+0.006)
-    v3 =  float(msg['location']['longitude']+0.01)
-    v4 =  float(msg['location']['latitude']-0.006)
-    v5 = float(msg['location']['longitude']-0.01)
-    print str(v2) + "," + str(v3)
-    print str(v4) + "," + str(v5)
-    global targetlocation
-    targetlocation = "http://"+TARGETSITE+"/raw_data?pokemon=true&pokestops=false&gyms=false&scanned=true&spawnpoints=true&swLat="+str(v4)+"&swLng="+str(v5)+"&neLat="+str(v2)+"&neLng="+str(v3)+"&_=1471877684506"
-    print targetlocation
-    postlocation = "http://"+TARGETSITE+"/next_loc?lat="+str(msg['location']['latitude'])+"&lon="+str(msg['location']['longitude'])
-    r = http.request('POST', postlocation)
-
 def messageHandle(msg):
     if msg['text'] == "pokemoner":
         if chat_id not in users:
@@ -87,8 +72,6 @@ def handle(msg):
     print msg['from']
     if content_type == 'text':
         messageHandle(msg)
-    elif content_type == 'location':
-        locationChange(msg)
 
 def pokemonTargetInterest(target):
     return target in pokemonTargets
