@@ -1,7 +1,6 @@
 #my ignore
 config.txt
 runbot.bat
-log/log
 log/log*
 
 # Byte-compiled / optimized / DLL files
